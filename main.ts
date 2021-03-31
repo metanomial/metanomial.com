@@ -7,7 +7,7 @@ if (Number.isNaN(port))
 const server = serve({ port })
 console.log(`Serving on port ${port}`)
 
-const Response: Record<string, Response> = {
+const Responses: Record<string, Response> = {
   INDEX: {
     headers: new Headers({ 'Content-Type': 'text/html' }),
     body: await Deno.readTextFile('./index.html')
@@ -21,9 +21,9 @@ for await (const request of server) {
   switch (request.url) {
     case '/':
     case '/index.html':
-      request.respond(Response.INDEX)
+      request.respond(Responses.INDEX)
       break
     default:
-      request.respond(Response.NOT_FOUND)
+      request.respond(Responses.NOT_FOUND)
   }
 }
