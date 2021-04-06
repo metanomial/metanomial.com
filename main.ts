@@ -1,4 +1,5 @@
-async function handleRequest (request: Request) {
+async function handleRequest (request: Request): Promise<Response> {
+  console.log(request)
   switch (request.url) {
     case '/':
     case '/index.html': {
