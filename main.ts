@@ -1,6 +1,7 @@
 async function handleRequest (request: Request): Promise<Response> {
+  const { pathname } = new URL(request.url)
   console.log(request)
-  switch (request.url) {
+  switch (pathname) {
     case '/':
     case '/index.html': {
       const url = new URL('index.html', import.meta.url)
