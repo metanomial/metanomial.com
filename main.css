@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Merriweather";
+  src: url(/assets/Merriweather.ttf) format("truetype");
+  font-weight: 100 900;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url(/assets/Merriweather-Italic.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --text-color: #2d3532;
+  --background-color: #fffff6;
+  --anchor-color: #38947b;
+  --border: 2px solid var(--text-color);
+  --shadow: 0.2rem 0.2rem 0.4rem #0002;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fffff6;
+    --background-color: #282c2b;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 37.5rem;
+  margin: 2rem auto 4rem;
+  padding: 1rem;
+  font-family: "Merriweather", serif;
+  line-height: 1.5;
+  text-shadow: var(--shadow);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a[target=_blank]::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.2ch;
+  width: 1ex;
+  height: 1ex;
+  background-image: url("/assets/external.svg");
+  background-size: 1ex;
+}
+
+ul {
+  margin: 1rem 0 1rem 1rem;
+}
+
+nav[role=navigation] ul {
+  list-style: square;
+}
+
+h1 {
+  margin: 3rem 0;
+  font-weight: 900;
+  font-size: 2.6rem;
+}
+
+h2 {
+  margin: 2rem 0;
+  border-bottom: var(--border);
+}
+
+h3 {
+  margin: 2rem 0 0.4rem;
+}
+
+p {
+  margin: 0.4rem 0;
+}
+
+footer {
+  margin-top: 4rem;
+  opacity: 0.8;
+  font-size: 50%;
+}
+
+@media (max-width: 37.5rem) {
+  h1 {
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  h2 {
+    margin: 1.2rem 0;
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    margin: 1rem 0 0.4rem;
+  }
+}
